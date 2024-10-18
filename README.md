@@ -62,10 +62,14 @@ Forward the Prometheus port:
 ```bash
 kubectl port-forward svc/prometheus-server 9090:80
 ```
-Access Prometheus at `http://localhost:9090`.
+Local Environment >>> Access Prometheus at `http://localhost:9090`.
+
+CodeSpaces Environment >>>https://friendly-rotary-phone-7w5g6j49r6hwr4p-9090.app.github.dev/graph?g0.expr=&g0.tab=1&g0.display_mode=lines&g0.show_exemplars=0&g0.range_input=1h
+Check ports with 9090
 
 ### 9. Add Prometheus as a Data Source in Grafana
-1. Open Grafana in your browser at `http://localhost:3000`.
+1. Local : Open Grafana in your browser at `http://localhost:3000`.
+CodeSpaces >>> https://friendly-rotary-phone-7w5g6j49r6hwr4p-3000.app.github.dev/?orgId=1
 2. Log in with `admin` and the retrieved password.
 3. Go to **Configuration** > **Data Sources**.
 4. Click **Add data source**.
