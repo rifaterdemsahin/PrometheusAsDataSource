@@ -1,12 +1,14 @@
 global:
   scrape_interval: 15s
 
-  scrape_configs:
-    - job_name: 'prometheus'
-      static_configs:
-        - targets: ['localhost:9090']
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
 
-  # Enable public access
-  web:
-    external_url: 'https://studious-trout-j97xvpwj66c5w7x-9090.app.github.dev/'
-    listen_address: ':9090'
+# Enable public access
+# This is the Prometheus address
+# As this is Codespaces, the listen address should be 80 or 9090
+web:
+  external_url: 'https://studious-trout-j97xvpwj66c5w7x-9090.app.github.dev/graph?g0.expr=&g0.tab=1&g0.display_mode=lines&g0.show_exemplars=0&g0.range_input=1h'
+  listen_address: ':80'
