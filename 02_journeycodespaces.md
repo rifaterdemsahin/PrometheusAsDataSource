@@ -82,3 +82,8 @@ kubectl get pods
 
 You should see pods for Prometheus, Grafana, and Thanos running.
 
+Access error upgrade
+helm install prometheus prometheus-community/prometheus -f /workspaces/PrometheusAsDataSource/SymbolicCode/prometheus.yml
+
+for upgrade 
+helm upgrade prometheus prometheus-community/prometheus -f /workspaces/PrometheusAsDataSource/SymbolicCode/prometheus.yml
