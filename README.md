@@ -74,7 +74,7 @@ CodeSpaces >>> https://friendly-rotary-phone-7w5g6j49r6hwr4p-3000.app.github.dev
 3. Go to **Configuration** > **Data Sources**.
 4. Click **Add data source**.
 5. Select **Prometheus**.
-6. Set the URL to `http://prometheus-server.default.svc.cluster.local:80`.
+6. Set the URL to `https://friendly-rotary-phone-7w5g6j49r6hwr4p-9090.app.github.dev`.
 7. Click **Save & Test** to verify the connection.
 
 ### 8. Verify Installations
