@@ -58,7 +58,8 @@ Forward the Prometheus port:
 ```bash
 kubectl port-forward svc/prometheus-server 9090:80
 ```
-Access Prometheus at `http://localhost:9090`.
+Access Prometheus at `http://localhost:9090`. >>> not in code spaces
+
 
 ### 9. Add Prometheus as a Data Source in Grafana
 1. Open Grafana in your browser at `http://localhost:3000`.
