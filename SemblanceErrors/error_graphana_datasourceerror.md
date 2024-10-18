@@ -42,3 +42,21 @@ Post "http://10.244.0.6:9090/api/v1/query": dial tcp 10.244.0.6:9090: connect: c
 
 http://10.244.0.6:9093 404 Not Found - There was an error returned querying the Prometheus API.
 
+To solve these issues, follow these steps:
+
+1. **401 Unauthorized Error:**
+    - Ensure that the Prometheus server is running and accessible.
+    - Verify the URL used in Grafana's data source configuration.
+    - Provide necessary credentials if Prometheus requires authentication.
+
+2. **Connection Refused Error:**
+    - Check if the Prometheus server is running on the specified IP and port.
+    - Ensure there are no network issues preventing Grafana from reaching Prometheus.
+    - Verify that the Prometheus server is configured to listen on the correct IP and port.
+
+3. **404 Not Found Error:**
+    - Confirm that the URL used in the query is correct.
+    - Ensure that the Prometheus API endpoint exists and is accessible.
+    - Check for any typos or incorrect paths in the URL.
+
+By following these steps, you should be able to resolve the errors encountered when querying the Prometheus API from Grafana.
