@@ -1,3 +1,41 @@
+To dynamically load all images from a folder, you would typically need a server-side script to list the files in the directory. However, since HTML and JavaScript alone cannot access the file system directly, you would need to use a server-side language like Python, PHP, or Node.js to achieve this.
+
+Here's an example using Node.js with Express to serve the images:
+
+1. **Set up a Node.js server:**
+
+    Create a file called `server.js`:
+
+    ```javascript
+    const express = require('express');
+    const fs = require('fs');
+    const path = require('path');
+
+    const app = express();
+    const imagesDir = path.join(__dirname, 'images');
+
+    app.use(express.static(imagesDir));
+
+    app.get('/images', (req, res) => {
+         fs.readdir(imagesDir, (err, files) => {
+              if (err) {
+                    return res.status(500).send('Unable to scan directory');
+              }
+              const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif)$/.test(file));
+              res.json(imageFiles);
+         });
+    });
+
+    app.listen(3000, () => {
+         console.log('Server is running on http://localhost:3000');
+    });
+    ```
+
+2. **Modify your HTML to fetch and display the images:**
+
+    Update your `display.html`:
+
+    ```html
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -86,3 +124,16 @@
          </script>
     </body>
     </html>
+    ```
+
+3. **Place your images in the `images` folder** in the same directory as `server.js`.
+
+4. **Run your Node.js server:**
+
+    ```bash
+    node server.js
+    ```
+
+5. **Open your browser** and navigate to `http://localhost:3000/display.html`.
+
+This setup will dynamically load all images from the `images` folder and display them in the carousel.
