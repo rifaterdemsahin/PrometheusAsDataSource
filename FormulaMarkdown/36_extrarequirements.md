@@ -38,3 +38,7 @@ Create a Java Hello World app
     - Set up a Rancher-managed Kubernetes cluster.
     - Deploy your applications, Loki, Prometheus, and Grafana in the Rancher environment.
     - Verify the deployment and functionality.
+
+
+> Extra requirement : Handson Requested
+/workspaces/PrometheusAsDataSource/FormulaMarkdown/36_extrarequirements.md
