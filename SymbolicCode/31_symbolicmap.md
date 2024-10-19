@@ -9,6 +9,6 @@ graph TD
         Grafana[Grafana]
     end
 
-    Prometheus -->|Port 9090| Grafana
+    Prometheus -->|Port 80| Grafana
     Client[Client 1990] -->|80| Grafana
 ```
