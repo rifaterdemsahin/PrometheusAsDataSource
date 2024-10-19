@@ -1,5 +1,8 @@
 ```
-mkdir -p FormulaMarkdown Imaginary SemblanceErrors SymbolicCode && touch FormulaMarkdown/README.md Imaginary/README.md SemblanceErrors/README.md SymbolicCode/README.md ImaginaryMilestones.md JouisanceJourney.md RealEnvironments.md RealJob.md SymbolicMap.mdThe rewritten markdown content that would fit at $SELECTION_PLACEHOLDER$ wrapped with -+-+-+-+-+ is:
+mkdir -p FormulaMarkdown Imaginary SemblanceErrors SymbolicCode && touch FormulaMarkdown/README.md Imaginary/README.md SemblanceErrors/README.md SymbolicCode/README.md ImaginaryMilestones.md JouisanceJourney.md RealEnvironments.md RealJob.md SymbolicMap.md
+
+
+The rewritten markdown content that would fit at $SELECTION_PLACEHOLDER$ wrapped with -+-+-+-+-+ is:
 
 ```
 
