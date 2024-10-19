@@ -47,6 +47,8 @@ helm install grafana grafana/grafana
 ```
 
 # Port forward Grafana
+
+# initial setup
 kubectl port-forward svc/grafana 3000:80 &
  
 
