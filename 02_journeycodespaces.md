@@ -35,6 +35,8 @@ helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 echo "Helm repositories added successfully!"
 ```
+Important always use a namespace never use default
+kubectl create namespace monitoring
 
 ### 4. 📈 Install Prometheus
 ```bash
@@ -46,11 +48,38 @@ helm install prometheus prometheus-community/prometheus -n monitoring
 helm install grafana grafana/grafana -n monitoring
 ```
 
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get pods -A
+NAMESPACE     NAME                                                 READY   STATUS    RESTARTS      AGE
+kube-system   coredns-6f6b679f8f-v8rmh                             1/1     Running   2 (28m ago)   147m
+kube-system   etcd-minikube                                        1/1     Running   2 (28m ago)   147m
+kube-system   kube-apiserver-minikube                              1/1     Running   2 (28m ago)   147m
+kube-system   kube-controller-manager-minikube                     1/1     Running   2 (28m ago)   147m
+kube-system   kube-proxy-6lts6                                     1/1     Running   2 (28m ago)   147m
+kube-system   kube-scheduler-minikube                              1/1     Running   2 (28m ago)   147m
+kube-system   storage-provisioner                                  1/1     Running   4 (28m ago)   147m
+monitoring    grafana-fcff55447-7flvv                              0/1     Running   0             6s
+monitoring    prometheus-alertmanager-0                            1/1     Running   0             22s
+monitoring    prometheus-kube-state-metrics-75b5bb4bf8-6h9js       1/1     Running   0             22s
+monitoring    prometheus-prometheus-node-exporter-ftbv5            1/1     Running   0             22s
+monitoring    prometheus-prometheus-pushgateway-84557d6c79-4fcc2   1/1     Running   0             22s
+monitoring    prometheus-server-644d686bc6-qbfrk                   1/2     Running   0             22s
+
 # Port forward Grafana
 
-# initial setup
-kubectl port-forward svc/grafana 3000:80 &
- 
+# initial Port forward setup 
+```bash
+kubectl port-forward svc/grafana 3000:80 -n monitoring
+```
+- **Local Environment:** Access Grafana at `http://localhost:3000`.
+- **CodeSpaces Environment:** Access Grafana at `https://friendly-rotary-phone-7w5g6j49r6hwr4p-3000.app.github.dev`.
+
+
+### 6. 🔄 Port Forward Prometheus
+```bash
+kubectl port-forward svc/prometheus-server 9090:80 -n monitoring
+```
+- **Local Environment:** Access Prometheus at `http://localhost:9090`.
+- **CodeSpaces Environment:** Access Prometheus at `https://friendly-rotary-phone-7w5g6j49r6hwr4p-9090.app.github.dev/graph?g0.expr=&g0.tab=1&g0.display_mode=lines&g0.show_exemplars=0&g0.range_input=1h`.
 
 
 ### 7. 🌐 Access Grafana
