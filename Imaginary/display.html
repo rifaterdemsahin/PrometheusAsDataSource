@@ -1,88 +1,159 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>Image Carousel</title>
-         <style>
-              .carousel {
-                    position: relative;
-                    width: 80%;
-                    margin: auto;
-                    overflow: hidden;
-              }
-              .carousel img {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Image Carousel</title>
+      <style>
+            .carousel {
+                  position: relative;
+                  width: 80%;
+                  margin: auto;
+                  overflow: hidden;
+            }
+            .carousel img {
                     width: 100%;
-                    display: none;
-              }
-              .carousel img.active {
-                    display: block;
-              }
-              .carousel-header {
-                    text-align: center;
-                    font-size: 1.5em;
-                    margin-bottom: 10px;
-              }
-              .carousel-controls {
-                    text-align: center;
-                    margin-top: 10px;
-              }
-              .carousel-controls button {
-                    padding: 10px;
-                    font-size: 1em;
-              }
-         </style>
-    </head>
-    <body>
-         <div class="carousel">
-              <div class="carousel-header" id="carousel-header">Loading...</div>
-              <div id="carousel-images"></div>
-              <div class="carousel-controls">
-                    <button onclick="prevImage()">Previous</button>
-                    <button onclick="nextImage()">Next</button>
-              </div>
-         </div>
+                    cursor: pointer;
+                  display: none;
+            }
+            .carousel img.active {
+                  display: block;
+            }
+            .carousel-header {
+                  text-align: center;
+                  font-size: 1.5em;
+                  margin-bottom: 10px;
+            }
+            .carousel-controls {
+                  text-align: center;
+                  margin-top: 10px;
+            }
+            .carousel-controls button {
+                  padding: 10px;
+                  font-size: 1em;
+            }
+            .image-names {
+                  text-align: center;
+                  margin-bottom: 10px;
+            }
+            .image-names span {
+                  cursor: pointer;
+                  margin: 0 5px;
+                  text-decoration: underline;
+            }
+      </style>
+</head>
+<body>
+      <div class="carousel">
+            <div class="carousel-header" id="carousel-header">Loading...</div>
+            <div class="image-names" id="image-names"></div>
+            <div id="carousel-images"></div>
+            <div class="carousel-controls">
+                  <button onclick="prevImage()">Previous</button>
+                  <button onclick="nextImage()">Next</button>
+            </div>
+      </div>
 
-         <script>
-              let currentIndex = 0;
-              let images = [];
-              const header = document.getElementById('carousel-header');
-              const carouselImages = document.getElementById('carousel-images');
+      <script>
+            let currentIndex = 0;
+            let images = [];
+            const header = document.getElementById('carousel-header');
+            const carouselImages = document.getElementById('carousel-images');
+            const imageNames = document.getElementById('image-names');
 
-              function showImage(index) {
-                    images.forEach((img, i) => {
-                         img.classList.toggle('active', i === index);
-                    });
-                    header.textContent = images[index].alt;
-              }
+            function showImage(index) {
+                  images.forEach((img, i) => {
+                        img.classList.toggle('active', i === index);
+                  });
+                  header.textContent = images[index].alt;
+            }
 
-              function prevImage() {
-                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-                    showImage(currentIndex);
-              }
+            function prevImage() {
+                  currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                  showImage(currentIndex);
+            }
 
-              function nextImage() {
-                    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-                    showImage(currentIndex);
-              }
+            function nextImage() {
+                  currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                  showImage(currentIndex);
+            }
 
-              fetch('/images')
-                    .then(response => response.json())
-                    .then(data => {
-                         data.forEach((file, index) => {
-                              const img = document.createElement('img');
-                              img.src = file;
-                              img.alt = `Image ${index + 1}`;
-                              if (index === 0) img.classList.add('active');
-                              carouselImages.appendChild(img);
-                              images.push(img);
-                         });
-                         header.textContent = images[0].alt;
-                    })
-                    .catch(error => {
-                         console.error('Error fetching images:', error);
-                         header.textContent = 'Error loading images';
-                    });
-         </script>
-    </body>
-    </html>
+            function goToImage(index) {
+                  currentIndex = index;
+                  showImage(currentIndex);
+            }
+
+            const imageFiles = [
+                  '12_prometheus-error.png',
+                  '05_portcheck_codespaces.png',
+                  '13_error-connect.png',
+                  '15_promethesus-access.png',
+                  '14_grafanaturnon.png',
+                  '30_lacans_triad.png',
+                  '29_cni_access.png',
+                  '28_prometheus_ip_control.png',
+                  '27_network_fail.png',
+                  '26_notdefaul_auth.png',
+                  '22_prpometheusurl_as_config.png',
+                  '16_alertmanager.png',
+                  '33_update_diagram_with_voice.png',
+                  '32_installmermaid.png',
+                  '34-nihabeyasked-cpu-disc-nodlogs.png',
+                  '37_restart_port_notworking.png',
+                  '38_stopport_deletesport.png',
+                  '39_after_restart_portforward.png',
+                  '40_running_two_ports_atthesametime.png',
+                  '44_namespace_install_error.png',
+                  '45_namespace_check.png',
+                  '46_ports forwarded.png',
+                  '47_loadbalancedurl.png',
+                  '48_loadbalancedurls_fromcodespaces.png',
+                  '49_urlversusport.png',
+                  '50_allowedports_onurlrewrite.png',
+                  '51_access_bridge_networks.png',
+                  '52_bridgenetwork.png',
+                  '53_notbridged_localhost_station_error.png',
+                  '54_localnetwork_notreaching_loadbalancer.png',
+                  '55_loadbalancer.png',
+                  '56_developmentport.png',
+                  '57_commentout.png',
+                  '58_firstoneyourport_rightoneplatformport.png',
+                  '59_helm_ouput_dns_location.png',
+                  '62_bridge_network.png',
+                  '63_askquestions_on_context.png',
+                  '64_practical_create_folderstucture.png',
+                  '65_nominikube_noportsare_open.png',
+                  '66_rightportatloadbalancer_leftportinpod.png',
+                  '67_allclusterips_different.png',
+                  '68_success_port_add.png',
+                  '69_pod_access_another_pod_over_svc.png',
+                  '70_ServiceType.png',
+                  '71_metrics.png',
+                  '72_prometheus_yaml_config.png',
+                  '73_see_data_in_prometheus.png',
+                  '74_prometheus_query.png',
+                  '75_select_a_metric.png',
+                  '76_memory_prometheus.png',
+                  '77_dashboard.png',
+                  '78_node_sunserverjs.png',
+                  '79_node-library-miss.png'
+            ];
+
+            imageFiles.forEach((file, index) => {
+                  const img = document.createElement('img');
+                  img.src = file;
+                  img.alt = `Image ${index + 1}`;
+                  if (index === 0) img.classList.add('active');
+                  carouselImages.appendChild(img);
+                  images.push(img);
+
+                  const nameSpan = document.createElement('span');
+                  nameSpan.textContent = `Image ${index + 1}`;
+                  nameSpan.onclick = () => goToImage(index);
+                  imageNames.appendChild(nameSpan);
+            });
+
+            header.textContent = images[0].alt;
+      </script>
+</body>
+</html>
