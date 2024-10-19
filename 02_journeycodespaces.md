@@ -19,6 +19,15 @@ Helm should already be installed as per the prerequisites. Verify the installati
 helm version
 ```
 
+
+### Helm Version Output
+```bash
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ helm version
+version.BuildInfo{Version:"v3.16.1", GitCommit:"5a5449dc42be07001fd5771d56429132984ab3ab", GitTreeState:"clean", GoVersion:"go1.22.7"}
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ ^C
+```
+
+
 ### 3. ➕ Add Helm Repositories
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
@@ -37,20 +46,14 @@ helm install prometheus prometheus-community/prometheus
 helm install grafana grafana/grafana
 ```
 
-### 6. 🛡️ Install Thanos
-```bash
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm install thanos bitnami/thanos
-```
 
 ### 7. 🌐 Access Grafana
 Get the Grafana admin password:
 ```bash
 kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
-Forward the Grafana port:
-```bash
-kubectl port-forward svc/grafana 3000:80
+KJXXQeCaprEKz3FHjq7rjosYOiZxfmnZhM4xi90F
+
 ```
 Access Grafana at `http://localhost:3000` and log in with `admin` and the retrieved password.
 
