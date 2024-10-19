@@ -8,7 +8,7 @@ Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "prometheus-community" chart repository
 Update Complete. ⎈Happy Helming!⎈
 
-
+REDO!!!!!
 
 @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ helm install prometheus prometheus-community/prometheus
 NAME: prometheus
@@ -19,7 +19,10 @@ REVISION: 1
 TEST SUITE: None
 NOTES:
 The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
+
+#################################################################################
 prometheus-server.default.svc.cluster.local
+#################################################################################
 
 
 Get the Prometheus server URL by running these commands in the same shell:
