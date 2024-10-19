@@ -10,6 +10,5 @@ graph TD
     end
 
     Prometheus -->|Port 9090| Grafana
-    Grafana -->|Port 3000| Prometheus
-    Client1990[Client 1990] -->|Port 1990| Grafana
+    Client[Client 1990] -->|80| Grafana
 ```
