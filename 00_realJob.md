@@ -2,6 +2,8 @@
 
 ## Objective
 
+# Jira candidate
+
 Successfully set up Prometheus as a data source for Grafana in a Minikube environment using GitHub Codespaces.
 
 ## Key Results
@@ -13,12 +15,10 @@ Successfully set up Prometheus as a data source for Grafana in a Minikube enviro
 2. **Prometheus Deployment:**
    - Prometheus Helm repository is added and updated.
    - Prometheus is installed using Helm in the `monitoring` namespace.
-   - Prometheus service is exposed and accessible via `http://localhost:9090`.
 
 3. **Grafana Deployment:**
    - Grafana Helm repository is added and updated.
    - Grafana is installed using Helm in the `monitoring` namespace.
-   - Grafana service is exposed and accessible via `http://localhost:3000`.
 
 4. **Data Source Configuration:**
    - Prometheus is added as a data source in Grafana.
