@@ -71,7 +71,10 @@ monitoring    prometheus-server-644d686bc6-qbfrk                   1/2     Runni
 kubectl port-forward svc/grafana 3000:80 -n monitoring
 ```
 - **Local Environment:** Access Grafana at `http://localhost:3000`.
+
+
 - **CodeSpaces Environment:** Access Grafana at `https://friendly-rotary-phone-7w5g6j49r6hwr4p-3000.app.github.dev`.
+- Cloud spaces environment > https://fictional-space-fiesta-675v46v6q35vpw-3000.app.github.dev/connections/datasources/edit/ce1ci1ipttkw0e
 
 
 ### 6. 🔄 Port Forward Prometheus
@@ -79,6 +82,7 @@ kubectl port-forward svc/grafana 3000:80 -n monitoring
 kubectl port-forward svc/prometheus-server 9090:80 -n monitoring
 ```
 - **Local Environment:** Access Prometheus at `http://localhost:9090`.
+
 - **CodeSpaces Environment:** Access Prometheus at `https://friendly-rotary-phone-7w5g6j49r6hwr4p-9090.app.github.dev/graph?g0.expr=&g0.tab=1&g0.display_mode=lines&g0.show_exemplars=0&g0.range_input=1h`.
 
 
