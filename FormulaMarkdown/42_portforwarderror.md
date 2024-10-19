@@ -17,6 +17,50 @@ Ensure that the `prometheus-server` service is defined correctly and has a port 
 kubectl get svc prometheus-server -o yaml
 ```
 
+ifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get svc prometheus-server -o yaml
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: prometheus
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2024-10-19T10:35:51Z"
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/instance: prometheus
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/part-of: prometheus
+    app.kubernetes.io/version: v2.54.1
+    helm.sh/chart: prometheus-25.27.0
+  name: prometheus-server
+  namespace: default
+  resourceVersion: "578"
+  uid: 8d0bb631-4259-4b53-8f20-560d87d22226
+spec:
+  clusterIP: 10.102.249.221
+  clusterIPs:
+  - 10.102.249.221
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/instance: prometheus
+    app.kubernetes.io/name: prometheus
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
+
+
 Look for the `ports` section in the output. It should include an entry with `port: 9090`.
 
 ### Verify the Service Ports
@@ -71,3 +115,11 @@ spec:
 By following these steps, you should be able to resolve the error and successfully forward the port.
 ```
 
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get pods
+NAME                                                 READY   STATUS    RESTARTS      AGE
+grafana-656b48bc49-g45r7                             1/1     Running   1 (19m ago)   133m
+prometheus-alertmanager-0                            1/1     Running   2 (18m ago)   133m
+prometheus-kube-state-metrics-75b5bb4bf8-g22gc       1/1     Running   3 (18m ago)   133m
+prometheus-prometheus-node-exporter-m77f8            1/1     Running   2 (18m ago)   133m
+prometheus-prometheus-pushgateway-84557d6c79-cjtp2   1/1     Running   2 (18m ago)   133m
+prometheus-server-644d686bc6-bt65g                   2/2     Running   4 (18m ago)   133m

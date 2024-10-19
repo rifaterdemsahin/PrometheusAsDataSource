@@ -38,12 +38,12 @@ echo "Helm repositories added successfully!"
 
 ### 4. 📈 Install Prometheus
 ```bash
-helm install prometheus prometheus-community/prometheus
+helm install prometheus prometheus-community/prometheus -n monitoring
 ```
 
 ### 5. 📊 Install Grafana
 ```bash
-helm install grafana grafana/grafana
+helm install grafana grafana/grafana -n monitoring
 ```
 
 # Port forward Grafana
