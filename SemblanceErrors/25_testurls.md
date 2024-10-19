@@ -2,17 +2,26 @@ Tested Urls
 
 loadbalanced > https://studious-trout-j97xvpwj66c5w7x-9090.app.github.dev/
 Error : 401 Unauthorized - There was an error returned querying the Prometheus API.
-
-http clusterip > http://10.107.155.133:9090 
-Error : Post "http://10.107.155.133:9090/api/v1/query": dial tcp 10.107.155.133:9090: i/o timeout - There was an error returned querying the Prometheus API.
+>>> There is a process but it is blocked
 
 
 localhost after port forward > http://localhost:9090
 Post "http://localhost:9090/api/v1/query": dial tcp [::1]:9090: connect: connection refused - There was an error returned querying the Prometheus API.
+>>> Firewall blocked the action
+
+http clusterip > http://10.107.155.133:9090 
+Error : Post "http://10.107.155.133:9090/api/v1/query": dial tcp 10.107.155.133:9090: i/o timeout - There was an error returned querying the Prometheus API.
+>>> There is no one to answer
 
 
-On ClusterIP > using minikube ip > Post "http://192.168.49.2:9090/api/v1/query": dial tcp 192.168.49.2:9090: connect: connection refused - There was an error returned querying the Prometheus API.
+Using minikube ip > Post "http://192.168.49.2:9090/api/v1/query": dial tcp 192.168.49.2:9090: connect: connection refused - There was an error returned querying the Prometheus API.
 
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ minikube ip
+192.168.49.2
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ ^C
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ curl 192.168.49.2:3000
+curl: (7) Failed to connect to 192.168.49.2 port 3000: Connection refused
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
 
 
  

@@ -86,6 +86,8 @@ kubectl port-forward svc/prometheus-server 9090:80 -n monitoring
 
 - **CodeSpaces Environment:** Access Prometheus at `https://friendly-rotary-phone-7w5g6j49r6hwr4p-9090.app.github.dev/graph?g0.expr=&g0.tab=1&g0.display_mode=lines&g0.show_exemplars=0&g0.range_input=1h`.
 
+- Development ports > accessed over load balancer
+- Development ports > accessed over the bridge
 
 ### 7. 🌐 Access Grafana
 Get the Grafana admin password:
