@@ -7,6 +7,15 @@ http clusterip > http://10.107.155.133:9090
 Error : Post "http://10.107.155.133:9090/api/v1/query": dial tcp 10.107.155.133:9090: i/o timeout - There was an error returned querying the Prometheus API.
 
 
+localhost after port forward > http://localhost:9090
+Post "http://localhost:9090/api/v1/query": dial tcp [::1]:9090: connect: connection refused - There was an error returned querying the Prometheus API.
+
+
+On ClusterIP > using minikube ip > Post "http://192.168.49.2:9090/api/v1/query": dial tcp 192.168.49.2:9090: connect: connection refused - There was an error returned querying the Prometheus API.
+
+
+
+ 
 It seems like you're facing two distinct issues with your Prometheus setup: a **401 Unauthorized error** when using the load-balanced URL and an **i/o timeout** error when accessing the Prometheus ClusterIP.
 
 ### Troubleshooting Both Issues:
@@ -40,8 +49,21 @@ The `i/o timeout` error suggests that Grafana cannot reach the Prometheus server
   - If both Grafana and Prometheus are running inside the Kubernetes cluster, ensure that there are no network policies or firewall rules blocking traffic between the Grafana pod and the Prometheus service.
   - Run this command to check if Grafana can reach Prometheus from within the cluster:
 
+  @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get pods
+NAME                                                 READY   STATUS    RESTARTS      AGE
+grafana-5d6687f55f-wbkr6                             1/1     Running   0             38m
+prometheus-alertmanager-0                            1/1     Running   1 (59m ago)   11h
+prometheus-kube-state-metrics-75b5bb4bf8-p6dsl       1/1     Running   1 (59m ago)   11h
+prometheus-prometheus-node-exporter-nnnkm            1/1     Running   1 (59m ago)   11h
+prometheus-prometheus-pushgateway-84557d6c79-k26wx   1/1     Running   1 (59m ago)   11h
+prometheus-server-644d686bc6-q8rjv                   2/2     Running   2 (59m ago)   11h
+thanos-query-7cd5586db6-6nrqm                        1/1     Running   1 (59m ago)   11h
+thanos-query-frontend-7d77d5979c-7qk6m               1/1     Running   1 (59m ago)   11h
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ ^C
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
+
     ```bash
-    kubectl exec -it <grafana-pod-name> -- curl http://10.107.155.133:9090
+    kubectl exec -it grafana-5d6687f55f-wbkr6 -- curl http://10.107.155.133:9090
     ```
 
     If this fails, it could indicate network issues or service misconfiguration.
@@ -71,3 +93,6 @@ The `i/o timeout` error suggests that Grafana cannot reach the Prometheus server
 2. **For the ClusterIP Timeout**: Ensure Grafana and Prometheus are in the same network, or use port-forwarding if accessing Prometheus from outside the cluster.
 
 If you need further help debugging specific configurations, feel free to provide additional details!
+
+
+a
