@@ -87,3 +87,8 @@ helm install prometheus prometheus-community/prometheus -f /workspaces/Prometheu
 
 for upgrade 
 helm upgrade prometheus prometheus-community/prometheus -f /workspaces/PrometheusAsDataSource/SymbolicCode/prometheus.yml
+
+
+for upgrade 
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ helm upgrade grafana grafana/grafana -f /workspaces/PrometheusAsDataSource/SymbolicCode/grafana.yaml
+Release "grafana" has been upgraded. Happy Helming!

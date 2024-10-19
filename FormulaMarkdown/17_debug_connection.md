@@ -79,6 +79,9 @@ To collect the logs from all relevant pods and save them to the same file with h
     kubectl logs thanos-query-frontend-7d77d5979c-7qk6m -n default
 } > all_pod_logs.txt
 ```
+Error We Get
+401 Unauthorized - There was an error returned querying the Prometheus API.
+Adding this > https://studious-trout-j97xvpwj66c5w7x-9090.app.github.dev/
 
 ### 2. **🌐 Validate Load Balancer URLs**
 Ensure the URLs you are trying to access are correct:
