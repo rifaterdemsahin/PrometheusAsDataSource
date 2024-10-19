@@ -10,6 +10,7 @@
 ### 1. 🚀 Start Minikube
 ```bash
 minikube start
+minikube status
 ```
 
 ### 2. 🔍 Verify Helm Installation
