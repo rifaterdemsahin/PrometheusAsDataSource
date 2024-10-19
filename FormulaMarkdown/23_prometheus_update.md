@@ -42,3 +42,11 @@ Get the PushGateway URL by running these commands in the same shell:
   kubectl --namespace default port-forward $POD_NAME 9091
 
 For more information on running Prometheus, visit:
+
+helm upgrade prometheus prometheus-community/prometheus -f /workspaces/PrometheusAsDataSource/SymbolicCode/prometheus.yaml
+
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ helm upgrade prometheus prometheus-community/prometheus -f /workspaces/PrometheusAsDataSource/SymbolicCode/prometheus.yaml  -n monitoring
+Error: UPGRADE FAILED: "prometheus" has no deployed releases
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
+
+helm upgrade prometheus prometheus-community/prometheus -f /workspaces/PrometheusAsDataSource/SymbolicCode/prometheus.yaml -n monitoring
