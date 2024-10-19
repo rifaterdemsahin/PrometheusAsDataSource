@@ -1,10 +1,38 @@
    grafana:
-    grafana.ini:
-      server:
-        root_url: http://localhost:3000
-      datasources:
-        prometheus:
-          type: prometheus
-          url: http://10.107.155.133:9090
-          access: proxy
-          isDefault: true
+       grafana.ini:
+          server:
+            root_url: http://localhost:3000
+          datasources:
+            prometheus:
+              type: prometheus
+              url: http://10.108.170.27:9090
+              access: proxy
+              isDefault: true
+
+    # @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get pods -n monitoring
+    # NAME                                                 READY   STATUS    RESTARTS   AGE
+    # grafana-8b569b974-f9pwk                              1/1     Running   0          46m
+    # prometheus-alertmanager-0                            1/1     Running   0          50m
+    # prometheus-kube-state-metrics-75b5bb4bf8-6h9js       1/1     Running   0          50m
+    # prometheus-prometheus-node-exporter-ftbv5            1/1     Running   0          50m
+    # prometheus-prometheus-pushgateway-84557d6c79-4fcc2   1/1     Running   0          50m
+    # prometheus-server-644d686bc6-qbfrk                   2/2     Running   0          50m
+    # @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ minikube ip 
+    # 192.168.49.2
+    # @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get svc
+    # NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+    # kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   3h20m
+    # @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get svc^C
+    # @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
+
+#     @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get svc -A
+# NAMESPACE     NAME                                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE
+# default       kubernetes                            ClusterIP   10.96.0.1       <none>        443/TCP                  3h21m
+# kube-system   kube-dns                              ClusterIP   10.96.0.10      <none>        53/UDP,53/TCP,9153/TCP   3h21m
+# monitoring    grafana                               ClusterIP   10.96.141.153   <none>        80/TCP                   49m
+# monitoring    prometheus-alertmanager               ClusterIP   10.99.76.139    <none>        9093/TCP                 54m
+# monitoring    prometheus-alertmanager-headless      ClusterIP   None            <none>        9093/TCP                 54m
+# monitoring    prometheus-kube-state-metrics         ClusterIP   10.97.78.169    <none>        8080/TCP                 54m
+# monitoring    prometheus-prometheus-node-exporter   ClusterIP   10.99.32.144    <none>        9100/TCP                 54m
+# monitoring    prometheus-prometheus-pushgateway     ClusterIP   10.110.42.17    <none>        9091/TCP                 54m
+# monitoring    prometheus-server                     ClusterIP   10.108.170.27   <none>        80/TCP                   54m

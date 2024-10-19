@@ -124,7 +124,10 @@ kubectl port-forward svc/prometheus-server 9090:80
 Check the status of the pods:
 ```bash
 kubectl get pods
+kubectl get -n monitoring
 ```
+
+MISSING CONFIG
 You should see pods for Prometheus, Grafana, and Thanos running.
 
 ### 🔄 Upgrade Instructions
