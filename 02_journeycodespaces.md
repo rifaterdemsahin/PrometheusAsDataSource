@@ -46,16 +46,23 @@ helm install prometheus prometheus-community/prometheus
 helm install grafana grafana/grafana
 ```
 
+# Port forward Grafana
+kubectl port-forward svc/grafana 3000:80 &
+ 
+
 
 ### 7. 🌐 Access Grafana
 Get the Grafana admin password:
 ```bash
 kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
-KJXXQeCaprEKz3FHjq7rjosYOiZxfmnZhM4xi90F
+admin is the default username
+password : KJXXQeCaprEKz3FHjq7rjosYOiZxfmnZhM4xi90F
 
 ```
 Access Grafana at `http://localhost:3000` and log in with `admin` and the retrieved password.
+
+> Use the ports in the tabs in codespaces
 
 ### 8. 🌐 Access Prometheus
 Forward the Prometheus port:

@@ -6,6 +6,4 @@ prometheus-kube-state-metrics-75b5bb4bf8-x8b47       1/1     Running   0        
 prometheus-prometheus-node-exporter-4dlsj            1/1     Running   0          17m
 prometheus-prometheus-pushgateway-84557d6c79-mdwk9   1/1     Running   0          17m
 prometheus-server-644d686bc6-p8jwk                   2/2     Running   0          17m
-thanos-query-7cd5586db6-xnt4c                        1/1     Running   0          16m
-thanos-query-frontend-7d77d5979c-nd5br               1/1     Running   0          16m
 @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
