@@ -1,4 +1,13 @@
 Tested Urls
+prometheus-kube-state-metrics  >
+monitoring    prometheus-kube-state-metrics         ClusterIP   10.97.78.169    <none>        8080/TCP                 4h52m
+parse "10.97.78.169:8080": invalid URI for request - There was an error returned querying the Prometheus API.
+--------
+
+
+
+--------
+
 
 loadbalanced > https://studious-trout-j97xvpwj66c5w7x-9090.app.github.dev/
 Error : 401 Unauthorized - There was an error returned querying the Prometheus API.
