@@ -14,8 +14,13 @@
 
 ### Development Environments
 - 🖥️ **CodeSpaces** (19 October)
-- ☸️ **Openshift** ( If the current environment does not work)
+- ☸️ **Openshift** (If the current environment does not work)
 - 🍏 **Local Mac**
 - 🖥️ **VM**
 - 🚜 **Rancher**
 - 🖥️ **Local desktop Windows**
+- 🖥️ **Docker Containers**
+- ☁️ **AWS Cloud9**
+- 🖥️ **Vagrant**
+- 🖥️ **VirtualBox**
+
