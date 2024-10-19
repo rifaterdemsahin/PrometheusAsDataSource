@@ -1,0 +1,98 @@
+You can get the Prometheus server's URL (usually the internal cluster IP and port) using `kubectl` commands. Here's how to do it:
+
+### 1. Get Prometheus Service Information
+
+To find the Prometheus service URL, use:
+
+```bash
+kubectl get svc -l app=prometheus
+
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get svc 
+NAME                                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)     AGE
+grafana                               ClusterIP   10.103.85.128    <none>        80/TCP      11h
+kubernetes                            ClusterIP   10.96.0.1        <none>        443/TCP     11h
+prometheus-alertmanager               ClusterIP   10.105.116.5     <none>        9093/TCP    11h
+prometheus-alertmanager-headless      ClusterIP   None             <none>        9093/TCP    11h
+prometheus-kube-state-metrics         ClusterIP   10.109.208.151   <none>        8080/TCP    11h
+prometheus-prometheus-node-exporter   ClusterIP   10.97.38.220     <none>        9100/TCP    11h
+prometheus-prometheus-pushgateway     ClusterIP   10.101.26.145    <none>        9091/TCP    11h
+prometheus-server                     ClusterIP   10.107.155.133   <none>        80/TCP      11h
+thanos-query                          ClusterIP   10.107.156.125   <none>        9090/TCP    11h
+thanos-query-frontend                 ClusterIP   10.111.1.240     <none>        9090/TCP    11h
+thanos-query-grpc                     ClusterIP   10.106.218.226   <none>        10901/TCP   11h
+
+```
+
+This will list all services labeled with `app=prometheus`, and you can identify the Prometheus server. For example:
+
+```bash
+NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+prometheus-server       ClusterIP   10.107.155.133    <none>        9090/TCP   10d
+```
+
+10.107.155.133 
+
+### 2. Describe the Prometheus Service
+
+Once you know the Prometheus service name (e.g., `prometheus-server`), you can describe it to get more details:
+
+```bash
+kubectl describe svc prometheus-server
+
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl describe svc prometheus-server
+Name:                     prometheus-server
+Namespace:                default
+Labels:                   app.kubernetes.io/component=server
+                          app.kubernetes.io/instance=prometheus
+                          app.kubernetes.io/managed-by=Helm
+                          app.kubernetes.io/name=prometheus
+                          app.kubernetes.io/part-of=prometheus
+                          app.kubernetes.io/version=v2.54.1
+                          helm.sh/chart=prometheus-25.27.0
+Annotations:              meta.helm.sh/release-name: prometheus
+                          meta.helm.sh/release-namespace: default
+Selector:                 app.kubernetes.io/component=server,app.kubernetes.io/instance=prometheus,app.kubernetes.io/name=prometheus
+Type:                     ClusterIP
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.107.155.133
+IPs:                      10.107.155.133
+Port:                     http  80/TCP
+TargetPort:               9090/TCP
+Endpoints:                10.244.0.10:9090
+Session Affinity:         None
+Internal Traffic Policy:  Cluster
+Events:                   <none>
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
+```
+
+Look for the `Cluster-IP` and `Port`. This will give you the internal URL within the Kubernetes cluster, which usually looks like this:
+
+```
+ClusterIP: 10.107.155.133
+Port: 9090/TCP
+```
+
+### 3. Construct the URL
+
+Once you have the ClusterIP and Port (in this case, `10.96.85.129:9090`), you can construct the Prometheus data source URL:
+
+```
+http://10.107.155.133:9090
+```
+
+This is the URL you can use to add Prometheus as a data source in Grafana **if** Grafana is running inside the same Kubernetes cluster.
+
+### 4. If You Need External Access (via Port Forwarding)
+
+If you are running Grafana locally or outside the cluster and want to use Prometheus, you can port-forward to expose the Prometheus server to your local machine:
+
+```bash
+kubectl port-forward svc/prometheus-server 9090:9090
+```
+
+Then, use the URL `http://localhost:9090` to connect to Prometheus from Grafana.
+
+### Summary
+- **Inside Cluster URL**: Use the `ClusterIP:Port` from `kubectl describe svc prometheus-server`.
+- **External Access**: Use port forwarding with `http://localhost:9090` when accessing Prometheus outside the cluster.
