@@ -1,8 +1,8 @@
-### 4. 📈 Install Prometheus
-```bash
-helm install prometheus prometheus-community/prometheus -n monitoring
-```
+### Uninstalls
 
 ```bash
 helm uninstall prometheus -n monitoring
+
+
+helm uninstall grafana -n monitoring
 ```
