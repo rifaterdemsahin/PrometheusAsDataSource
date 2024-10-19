@@ -71,7 +71,8 @@ monitoring    prometheus-server-644d686bc6-qbfrk                   1/2     Runni
 kubectl port-forward svc/grafana 3000:80 -n monitoring
 ```
 - **Local Environment:** Access Grafana at `http://localhost:3000`.
-
+- Development ports > accessed over load balancer
+- Development ports > accessed over the bridge
 
 - **CodeSpaces Environment:** Access Grafana at `https://friendly-rotary-phone-7w5g6j49r6hwr4p-3000.app.github.dev`.
 - Cloud spaces environment > https://fictional-space-fiesta-675v46v6q35vpw-3000.app.github.dev/connections/datasources/edit/ce1ci1ipttkw0e
