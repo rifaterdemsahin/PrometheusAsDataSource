@@ -29,3 +29,6 @@ Successfully set up Prometheus as a data source for Grafana in a Minikube enviro
 
 6. **Troubleshooting:**
    - Issues are identified and resolved by checking Minikube status, pod statuses, and logs for Prometheus and Grafana.
+
+   > Extra requirement : Handson Requested
+/workspaces/PrometheusAsDataSource/FormulaMarkdown/36_extrarequirements.md

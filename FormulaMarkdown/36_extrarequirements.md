@@ -40,5 +40,3 @@ Create a Java Hello World app
     - Verify the deployment and functionality.
 
 
-> Extra requirement : Handson Requested
-/workspaces/PrometheusAsDataSource/FormulaMarkdown/36_extrarequirements.md
