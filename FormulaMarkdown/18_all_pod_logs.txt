@@ -1,0 +1,172 @@
+]633;E;echo "### Logs for grafana-5cf7db946f-cjc5c";eda09edb-1a08-40cd-81c0-216d9d6cac26]633;C### Logs for grafana-5cf7db946f-cjc5c
+logger=settings t=2024-10-19T05:19:00.755289234Z level=info msg="Starting Grafana" version=11.2.2 commit=dbf571744d7dd2276e3198b54330e5a561b83953 branch=v11.2.x compiled=2024-10-19T05:19:00Z
+logger=settings t=2024-10-19T05:19:00.755718694Z level=info msg="Config loaded from" file=/usr/share/grafana/conf/defaults.ini
+logger=settings t=2024-10-19T05:19:00.755733302Z level=info msg="Config loaded from" file=/etc/grafana/grafana.ini
+logger=settings t=2024-10-19T05:19:00.755737884Z level=info msg="Config overridden from command line" arg="default.paths.data=/var/lib/grafana/"
+logger=settings t=2024-10-19T05:19:00.755742657Z level=info msg="Config overridden from command line" arg="default.paths.logs=/var/log/grafana"
+logger=settings t=2024-10-19T05:19:00.755746612Z level=info msg="Config overridden from command line" arg="default.paths.plugins=/var/lib/grafana/plugins"
+logger=settings t=2024-10-19T05:19:00.755750302Z level=info msg="Config overridden from command line" arg="default.paths.provisioning=/etc/grafana/provisioning"
+logger=settings t=2024-10-19T05:19:00.755753939Z level=info msg="Config overridden from command line" arg="default.log.mode=console"
+logger=settings t=2024-10-19T05:19:00.75575905Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_DATA=/var/lib/grafana/"
+logger=settings t=2024-10-19T05:19:00.755764074Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_LOGS=/var/log/grafana"
+logger=settings t=2024-10-19T05:19:00.755768628Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_PLUGINS=/var/lib/grafana/plugins"
+logger=settings t=2024-10-19T05:19:00.755773168Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_PROVISIONING=/etc/grafana/provisioning"
+logger=settings t=2024-10-19T05:19:00.75577756Z level=info msg="Config overridden from Environment variable" var="GF_SECURITY_ADMIN_USER=admin"
+logger=settings t=2024-10-19T05:19:00.755781772Z level=info msg="Config overridden from Environment variable" var="GF_SECURITY_ADMIN_PASSWORD=*********"
+logger=settings t=2024-10-19T05:19:00.755786171Z level=info msg=Target target=[all]
+logger=settings t=2024-10-19T05:19:00.755799138Z level=info msg="Path Home" path=/usr/share/grafana
+logger=settings t=2024-10-19T05:19:00.755803789Z level=info msg="Path Data" path=/var/lib/grafana/
+logger=settings t=2024-10-19T05:19:00.755807778Z level=info msg="Path Logs" path=/var/log/grafana
+logger=settings t=2024-10-19T05:19:00.755812773Z level=info msg="Path Plugins" path=/var/lib/grafana/plugins
+logger=settings t=2024-10-19T05:19:00.75581667Z level=info msg="Path Provisioning" path=/etc/grafana/provisioning
+logger=settings t=2024-10-19T05:19:00.755820528Z level=info msg="App mode production"
+logger=featuremgmt t=2024-10-19T05:19:00.756327065Z level=info msg=FeatureToggles panelMonitoring=true alertingSimplifiedRouting=true kubernetesPlaylists=true logRowsPopoverMenu=true autoMigrateXYChartPanel=true cloudWatchNewLabelParsing=true exploreMetrics=true angularDeprecationUI=true prometheusMetricEncyclopedia=true groupToNestedTableTransformation=true correlations=true nestedFolders=true lokiMetricDataplane=true annotationPermissionUpdate=true lokiQuerySplitting=true ssoSettingsApi=true recordedQueriesMulti=true topnav=true lokiQueryHints=true addFieldFromCalculationStatFunctions=true publicDashboards=true prometheusConfigOverhaulAuth=true transformationsRedesign=true logsExploreTableVisualisation=true transformationsVariableSupport=true managedPluginsInstall=true tlsMemcached=true dashgpt=true cloudWatchCrossAccountQuerying=true cloudWatchRoundUpEndTime=true lokiStructuredMetadata=true prometheusDataplane=true prometheusAzureOverrideAudience=true alertingInsights=true formatString=true logsContextDatasourceUi=true recoveryThreshold=true logsInfiniteScrolling=true awsAsyncQueryCaching=true influxdbBackendMigration=true alertingNoDataErrorExecution=true dataplaneFrontendFallback=true
+logger=sqlstore t=2024-10-19T05:19:00.756444408Z level=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2024-10-19T05:19:00.889535563Z level=info msg="Locking database"
+logger=migrator t=2024-10-19T05:19:00.889745712Z level=info msg="Starting DB migrations"
+logger=migrator t=2024-10-19T05:19:00.939451381Z level=info msg="migrations completed" performed=0 skipped=594 duration=452.277µs
+logger=migrator t=2024-10-19T05:19:00.939961813Z level=info msg="Unlocking database"
+logger=secrets t=2024-10-19T05:19:00.940474439Z level=info msg="Envelope encryption state" enabled=true currentprovider=secretKey.v1
+logger=plugin.angulardetectorsprovider.dynamic t=2024-10-19T05:19:01.006843186Z level=info msg="Restored cache from database" duration=3.471614ms
+logger=plugin.store t=2024-10-19T05:19:01.017462527Z level=info msg="Loading plugins..."
+logger=plugins.registration t=2024-10-19T05:19:01.074065231Z level=error msg="Could not register plugin" pluginId=xychart error="plugin xychart is already registered"
+logger=plugins.initialization t=2024-10-19T05:19:01.074091642Z level=error msg="Could not initialize plugin" pluginId=xychart error="plugin xychart is already registered"
+logger=local.finder t=2024-10-19T05:19:01.074180892Z level=warn msg="Skipping finding plugins as directory does not exist" path=/usr/share/grafana/plugins-bundled
+logger=plugin.store t=2024-10-19T05:19:01.074196023Z level=info msg="Plugins loaded" count=54 duration=56.733634ms
+logger=query_data t=2024-10-19T05:19:01.08689909Z level=info msg="Query Service initialization"
+logger=live.push_http t=2024-10-19T05:19:01.094387517Z level=info msg="Live Push Gateway initialization"
+logger=ngalert.notifier.alertmanager org=1 t=2024-10-19T05:19:01.101075557Z level=info msg="Applying new configuration to Alertmanager" configHash=d2c56faca6af2a5772ff4253222f7386
+logger=ngalert.state.manager t=2024-10-19T05:19:01.139630274Z level=info msg="Running in alternative execution of Error/NoData mode"
+logger=infra.usagestats.collector t=2024-10-19T05:19:01.147310451Z level=info msg="registering usage stat providers" usageStatsProvidersLen=2
+logger=provisioning.alerting t=2024-10-19T05:19:01.148041867Z level=info msg="starting to provision alerting"
+logger=provisioning.alerting t=2024-10-19T05:19:01.148058513Z level=info msg="finished to provision alerting"
+logger=grafanaStorageLogger t=2024-10-19T05:19:01.148246812Z level=info msg="Storage starting"
+logger=http.server t=2024-10-19T05:19:01.161664666Z level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=ngalert.state.manager t=2024-10-19T05:19:01.162888362Z level=info msg="Warming state cache for startup"
+logger=ngalert.multiorg.alertmanager t=2024-10-19T05:19:01.175811525Z level=info msg="Starting MultiOrg Alertmanager"
+logger=ngalert.state.manager t=2024-10-19T05:19:01.243701142Z level=info msg="State cache has been initialized" states=0 duration=80.810134ms
+logger=ngalert.scheduler t=2024-10-19T05:19:01.243878307Z level=info msg="Starting scheduler" tickInterval=10s maxAttempts=1
+logger=ticker t=2024-10-19T05:19:01.243985498Z level=info msg=starting first_tick=2024-10-19T05:19:10Z
+logger=provisioning.dashboard t=2024-10-19T05:19:01.293329319Z level=info msg="starting to provision dashboards"
+logger=provisioning.dashboard t=2024-10-19T05:19:01.293355634Z level=info msg="finished to provision dashboards"
+logger=plugins.update.checker t=2024-10-19T05:19:01.296276388Z level=info msg="Update check succeeded" duration=121.200359ms
+logger=grafana.update.checker t=2024-10-19T05:19:01.301439889Z level=info msg="Update check succeeded" duration=126.9687ms
+logger=grafana-apiserver t=2024-10-19T05:19:01.731633065Z level=info msg="Adding GroupVersion playlist.grafana.app v0alpha1 to ResourceManager"
+logger=grafana-apiserver t=2024-10-19T05:19:01.73216838Z level=info msg="Adding GroupVersion featuretoggle.grafana.app v0alpha1 to ResourceManager"
+logger=infra.usagestats t=2024-10-19T05:20:58.154072059Z level=info msg="Usage stats are ready to report"
+### Logs for prometheus-alertmanager-0
+ts=2024-10-19T05:18:56.698Z caller=main.go:181 level=info msg="Starting Alertmanager" version="(version=0.27.0, branch=HEAD, revision=0aa3c2aad14cff039931923ab16b26b7481783b5)"
+ts=2024-10-19T05:18:56.699Z caller=main.go:182 level=info build_context="(go=go1.21.7, platform=linux/amd64, user=root@22cd11f671e9, date=20240228-11:51:20, tags=netgo)"
+ts=2024-10-19T05:18:56.699Z caller=cluster.go:186 level=info component=cluster msg="setting advertise address explicitly" addr=10.244.0.11 port=9094
+ts=2024-10-19T05:18:56.732Z caller=cluster.go:683 level=info component=cluster msg="Waiting for gossip to settle..." interval=2s
+ts=2024-10-19T05:18:56.941Z caller=coordinator.go:113 level=info component=configuration msg="Loading configuration file" file=/etc/alertmanager/alertmanager.yml
+ts=2024-10-19T05:18:56.942Z caller=coordinator.go:126 level=info component=configuration msg="Completed loading of configuration file" file=/etc/alertmanager/alertmanager.yml
+ts=2024-10-19T05:18:56.947Z caller=tls_config.go:313 level=info msg="Listening on" address=[::]:9093
+ts=2024-10-19T05:18:56.947Z caller=tls_config.go:316 level=info msg="TLS is disabled." http2=false address=[::]:9093
+ts=2024-10-19T05:18:58.741Z caller=cluster.go:708 level=info component=cluster msg="gossip not settled" polls=0 before=0 now=1 elapsed=2.00107694s
+ts=2024-10-19T05:19:06.770Z caller=cluster.go:700 level=info component=cluster msg="gossip settled; proceeding" elapsed=10.037694403s
+### Logs for prometheus-kube-state-metrics-75b5bb4bf8-p6dsl
+I1019 05:18:59.399679       1 wrapper.go:120] "Starting kube-state-metrics"
+W1019 05:18:59.400497       1 client_config.go:659] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+I1019 05:18:59.401694       1 server.go:218] "Used resources" resources=["deployments","jobs","mutatingwebhookconfigurations","resourcequotas","horizontalpodautoscalers","limitranges","storageclasses","certificatesigningrequests","configmaps","daemonsets","pods","replicasets","replicationcontrollers","secrets","nodes","persistentvolumeclaims","endpoints","leases","persistentvolumes","services","statefulsets","networkpolicies","poddisruptionbudgets","volumeattachments","cronjobs","ingresses","validatingwebhookconfigurations","namespaces"]
+I1019 05:18:59.401916       1 types.go:227] "Using all namespaces"
+I1019 05:18:59.402016       1 types.go:145] "Using node type is nil"
+I1019 05:18:59.402100       1 server.go:245] "Metric allow-denylisting" allowDenyStatus="Excluding the following lists that were on denylist: "
+W1019 05:18:59.402164       1 client_config.go:659] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+I1019 05:18:59.423831       1 utils.go:72] "Tested communication with server"
+I1019 05:18:59.436241       1 utils.go:77] "Run with Kubernetes cluster version" major="1" minor="31" gitVersion="v1.31.0" gitTreeState="clean" gitCommit="9edcffcde5595e8a5b1a35f88c421764e575afce" platform="linux/amd64"
+I1019 05:18:59.436261       1 utils.go:78] "Communication with server successful"
+I1019 05:18:59.437068       1 server.go:372] "Started metrics server" metricsServerAddress="[::]:8080"
+I1019 05:18:59.437309       1 server.go:78] levelinfomsgListening onaddress[::]:8080
+I1019 05:18:59.437328       1 server.go:78] levelinfomsgTLS is disabled.http2falseaddress[::]:8080
+I1019 05:18:59.438100       1 metrics_handler.go:99] "Autosharding disabled"
+I1019 05:18:59.438120       1 server.go:361] "Started kube-state-metrics self metrics server" telemetryAddress="[::]:8081"
+I1019 05:18:59.439320       1 server.go:78] levelinfomsgListening onaddress[::]:8081
+I1019 05:18:59.439401       1 server.go:78] levelinfomsgTLS is disabled.http2falseaddress[::]:8081
+I1019 05:18:59.441284       1 builder.go:282] "Active resources" activeStoreNames="certificatesigningrequests,configmaps,cronjobs,daemonsets,deployments,endpoints,horizontalpodautoscalers,ingresses,jobs,leases,limitranges,mutatingwebhookconfigurations,namespaces,networkpolicies,nodes,persistentvolumeclaims,persistentvolumes,poddisruptionbudgets,pods,replicasets,replicationcontrollers,resourcequotas,secrets,services,statefulsets,storageclasses,validatingwebhookconfigurations,volumeattachments"
+### Logs for prometheus-prometheus-node-exporter-nnnkm
+ts=2024-10-19T05:18:55.097Z caller=node_exporter.go:193 level=info msg="Starting node_exporter" version="(version=1.8.2, branch=HEAD, revision=f1e0e8360aa60b6cb5e5cc1560bed348fc2c1895)"
+ts=2024-10-19T05:18:55.098Z caller=node_exporter.go:194 level=info msg="Build context" build_context="(go=go1.22.5, platform=linux/amd64, user=root@03d440803209, date=20240714-11:53:45, tags=unknown)"
+ts=2024-10-19T05:18:55.099Z caller=diskstats_common.go:111 level=info collector=diskstats msg="Parsed flag --collector.diskstats.device-exclude" flag=^(z?ram|loop|fd|(h|s|v|xv)d[a-z]|nvme\d+n\d+p)\d+$
+ts=2024-10-19T05:18:55.100Z caller=diskstats_linux.go:265 level=error collector=diskstats msg="Failed to open directory, disabling udev device properties" path=/host/root/run/udev/data
+ts=2024-10-19T05:18:55.100Z caller=filesystem_common.go:111 level=info collector=filesystem msg="Parsed flag --collector.filesystem.mount-points-exclude" flag=^/(dev|proc|run/credentials/.+|sys|var/lib/docker/.+|var/lib/containers/storage/.+)($|/)
+ts=2024-10-19T05:18:55.101Z caller=filesystem_common.go:113 level=info collector=filesystem msg="Parsed flag --collector.filesystem.fs-types-exclude" flag=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:111 level=info msg="Enabled collectors"
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=arp
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=bcache
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=bonding
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=btrfs
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=conntrack
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=cpu
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=cpufreq
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=diskstats
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=dmi
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=edac
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=entropy
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=fibrechannel
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=filefd
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=filesystem
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=hwmon
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=infiniband
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=ipvs
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=loadavg
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=mdadm
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=meminfo
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=netclass
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=netdev
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=netstat
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=nfs
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=nfsd
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=nvme
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=os
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=powersupplyclass
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=pressure
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=rapl
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=schedstat
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=selinux
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=sockstat
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=softnet
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=stat
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=tapestats
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=textfile
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=thermal_zone
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=time
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=timex
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=udp_queues
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=uname
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=vmstat
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=watchdog
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=xfs
+ts=2024-10-19T05:18:55.101Z caller=node_exporter.go:118 level=info collector=zfs
+ts=2024-10-19T05:18:55.102Z caller=tls_config.go:313 level=info msg="Listening on" address=[::]:9100
+ts=2024-10-19T05:18:55.102Z caller=tls_config.go:316 level=info msg="TLS is disabled." http2=false address=[::]:9100
+### Logs for prometheus-prometheus-pushgateway-84557d6c79-k26wx
+ts=2024-10-19T05:18:59.016Z caller=main.go:87 level=info msg="starting pushgateway" version="(version=1.9.0, branch=HEAD, revision=d1ca1a6a426126a09a21f745e8ffbaba550f9643)"
+ts=2024-10-19T05:18:59.018Z caller=main.go:88 level=info build_context="(go=go1.22.4, platform=linux/amd64, user=root@2167597b1e9c, date=20240608-15:04:08, tags=unknown)"
+ts=2024-10-19T05:18:59.068Z caller=tls_config.go:313 level=info msg="Listening on" address=[::]:9091
+ts=2024-10-19T05:18:59.072Z caller=tls_config.go:316 level=info msg="TLS is disabled." http2=false address=[::]:9091
+### Logs for prometheus-server-644d686bc6-q8rjv
+ts=2024-10-19T05:18:57.296117991Z level=info caller=/home/runner/work/prometheus-operator/prometheus-operator/cmd/prometheus-config-reloader/main.go:149 msg="Starting prometheus-config-reloader" version="(version=0.76.0, branch=refs/tags/v0.76.0, revision=022a289433e9e1a9a9c6ea161c6b87b7db801212)" build_context="(go=go1.22.6, platform=linux/amd64, user=Action-Run-ID-10387171470, date=20240814-12:12:02, tags=unknown)"
+ts=2024-10-19T05:18:57.296583035Z level=info caller=/home/runner/work/prometheus-operator/prometheus-operator/internal/goruntime/cpu.go:27 msg="Leaving GOMAXPROCS=2: CPU quota undefined"
+level=info ts=2024-10-19T05:18:57.303030715Z caller=reloader.go:282 msg="reloading via HTTP"
+level=info ts=2024-10-19T05:18:57.306592271Z caller=reloader.go:330 msg="started watching config file and directories for changes" cfg= cfgDirs= out= dirs=/etc/config
+ts=2024-10-19T05:18:57.306648274Z level=info caller=/home/runner/work/prometheus-operator/prometheus-operator/cmd/prometheus-config-reloader/main.go:207 msg="Starting web server for metrics" listen=0.0.0.0:8080
+level=info ts=2024-10-19T05:18:57.311682441Z caller=tls_config.go:313 msg="Listening on" address=[::]:8080
+level=info ts=2024-10-19T05:18:57.311706489Z caller=tls_config.go:316 msg="TLS is disabled." http2=false address=[::]:8080
+level=info ts=2024-10-19T05:21:57.315390846Z caller=reloader.go:548 msg="Reload triggered" cfg_in= cfg_out= cfg_dirs= watched_dirs=/etc/config
+### Logs for thanos-query-7cd5586db6-6nrqm
+ts=2024-10-19T05:18:58.938095002Z caller=options.go:26 level=info protocol=gRPC msg="disabled TLS, key and cert must be set to enable"
+ts=2024-10-19T05:18:58.97249975Z caller=query.go:833 level=info msg="starting query node"
+ts=2024-10-19T05:18:58.990348505Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+ts=2024-10-19T05:18:58.99050156Z caller=http.go:73 level=info service=http/server component=query msg="listening for requests and metrics" address=0.0.0.0:10902
+ts=2024-10-19T05:18:58.99600962Z caller=tls_config.go:313 level=info service=http/server component=query msg="Listening on" address=[::]:10902
+ts=2024-10-19T05:18:58.996947802Z caller=tls_config.go:316 level=info service=http/server component=query msg="TLS is disabled." http2=false address=[::]:10902
+ts=2024-10-19T05:18:58.997579701Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+ts=2024-10-19T05:18:58.998089674Z caller=grpc.go:167 level=info service=gRPC/server component=query msg="listening for serving gRPC" address=0.0.0.0:10901
+### Logs for thanos-query-frontend-7d77d5979c-7qk6m
+ts=2024-10-19T05:18:59.099632331Z caller=query_frontend.go:386 level=info msg="starting query frontend"
+ts=2024-10-19T05:18:59.099690549Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+ts=2024-10-19T05:18:59.100125429Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+ts=2024-10-19T05:18:59.100151829Z caller=http.go:73 level=info service=http/server component=query-frontend msg="listening for requests and metrics" address=0.0.0.0:9090
+ts=2024-10-19T05:18:59.100453101Z caller=tls_config.go:313 level=info service=http/server component=query-frontend msg="Listening on" address=[::]:9090
+ts=2024-10-19T05:18:59.100476666Z caller=tls_config.go:316 level=info service=http/server component=query-frontend msg="TLS is disabled." http2=false address=[::]:9090

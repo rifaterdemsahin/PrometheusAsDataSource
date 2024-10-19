@@ -1,0 +1,10 @@
+   grafana:
+     grafana.ini:
+       server:
+         root_url: http://localhost:3000
+       datasources:
+         prometheus:
+           type: prometheus
+           url: http://<prometheus-server>:9090
+           access: proxy
+           isDefault: true

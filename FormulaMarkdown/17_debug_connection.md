@@ -6,13 +6,78 @@ I have a minikube in openshift cluster anmd i have prometheus and graphana and i
 First, ensure that both Prometheus and Grafana pods are running correctly.
 
 ```bash
-kubectl get pods -n <namespace>
+minikube start
+
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get pods 
+NAME                                                 READY   STATUS    RESTARTS        AGE
+grafana-5cf7db946f-cjc5c                             1/1     Running   1 (2m44s ago)   11h
+prometheus-alertmanager-0                            1/1     Running   1 (2m44s ago)   11h
+prometheus-kube-state-metrics-75b5bb4bf8-p6dsl       1/1     Running   1 (2m44s ago)   11h
+prometheus-prometheus-node-exporter-nnnkm            1/1     Running   1 (2m44s ago)   11h
+prometheus-prometheus-pushgateway-84557d6c79-k26wx   1/1     Running   1 (2m44s ago)   11h
+prometheus-server-644d686bc6-q8rjv                   2/2     Running   2 (2m44s ago)   11h
+thanos-query-7cd5586db6-6nrqm                        1/1     Running   1 (2m44s ago)   11h
+thanos-query-frontend-7d77d5979c-7qk6m               1/1     Running   1 (2m44s ago)   11h
+
+```bash
+kubectl get pods -A
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get pods -A
+NAMESPACE     NAME                                                 READY   STATUS    RESTARTS        AGE
+default       grafana-5cf7db946f-cjc5c                             1/1     Running   1 (3m33s ago)   11h
+default       prometheus-alertmanager-0                            1/1     Running   1 (3m33s ago)   11h
+default       prometheus-kube-state-metrics-75b5bb4bf8-p6dsl       1/1     Running   1 (3m33s ago)   11h
+default       prometheus-prometheus-node-exporter-nnnkm            1/1     Running   1 (3m33s ago)   11h
+default       prometheus-prometheus-pushgateway-84557d6c79-k26wx   1/1     Running   1 (3m33s ago)   11h
+default       prometheus-server-644d686bc6-q8rjv                   2/2     Running   2 (3m33s ago)   11h
+default       thanos-query-7cd5586db6-6nrqm                        1/1     Running   1 (3m33s ago)   11h
+default       thanos-query-frontend-7d77d5979c-7qk6m               1/1     Running   1 (3m33s ago)   11h
+kube-system   coredns-6f6b679f8f-8m6xz                             1/1     Running   1 (3m33s ago)   11h
+kube-system   etcd-minikube                                        1/1     Running   1 (3m33s ago)   11h
+kube-system   kube-apiserver-minikube                              1/1     Running   1 (3m33s ago)   11h
+kube-system   kube-controller-manager-minikube                     1/1     Running   1 (3m33s ago)   11h
+kube-system   kube-proxy-5nbz4                                     1/1     Running   1 (3m33s ago)   11h
+kube-system   kube-scheduler-minikube                              1/1     Running   1 (3m33s ago)   11h
+kube-system   storage-provisioner                                  1/1     Running   3 (2m42s ago)   11h
 ```
 
 Look for any `CrashLoopBackOff`, `Error`, or `Pending` statuses. If there are issues with the pods themselves, you should check the logs for more details:
 
 ```bash
-kubectl logs <pod-name> -n <namespace>
+```bash
+kubectl logs grafana-5cf7db946f-cjc5c -n default
+kubectl logs prometheus-alertmanager-0 -n default
+kubectl logs prometheus-kube-state-metrics-75b5bb4bf8-p6dsl -n default
+kubectl logs prometheus-prometheus-node-exporter-nnnkm -n default
+kubectl logs prometheus-prometheus-pushgateway-84557d6c79-k26wx -n default
+kubectl logs prometheus-server-644d686bc6-q8rjv -n default
+kubectl logs thanos-query-7cd5586db6-6nrqm -n default
+kubectl logs thanos-query-frontend-7d77d5979c-7qk6m -n default
+```
+```
+
+### **📄 Collecting Logs**
+
+To collect the logs from all relevant pods and save them to the same file with headers, you can use the following commands:
+
+```bash
+{
+    echo "### Logs for grafana-5cf7db946f-cjc5c"
+    kubectl logs grafana-5cf7db946f-cjc5c -n default
+    echo "### Logs for prometheus-alertmanager-0"
+    kubectl logs prometheus-alertmanager-0 -n default
+    echo "### Logs for prometheus-kube-state-metrics-75b5bb4bf8-p6dsl"
+    kubectl logs prometheus-kube-state-metrics-75b5bb4bf8-p6dsl -n default
+    echo "### Logs for prometheus-prometheus-node-exporter-nnnkm"
+    kubectl logs prometheus-prometheus-node-exporter-nnnkm -n default
+    echo "### Logs for prometheus-prometheus-pushgateway-84557d6c79-k26wx"
+    kubectl logs prometheus-prometheus-pushgateway-84557d6c79-k26wx -n default
+    echo "### Logs for prometheus-server-644d686bc6-q8rjv"
+    kubectl logs prometheus-server-644d686bc6-q8rjv -n default
+    echo "### Logs for thanos-query-7cd5586db6-6nrqm"
+    kubectl logs thanos-query-7cd5586db6-6nrqm -n default
+    echo "### Logs for thanos-query-frontend-7d77d5979c-7qk6m"
+    kubectl logs thanos-query-frontend-7d77d5979c-7qk6m -n default
+} > all_pod_logs.txt
 ```
 
 ### 2. **🌐 Validate Load Balancer URLs**
