@@ -22,3 +22,16 @@ In your Minikube environment, to set up Prometheus as a data source for Grafana,
    - Leave the rest as default and click **Save & Test**.
 
 This should successfully add Prometheus as a data source to your Grafana instance in your Minikube environment.
+
+kubectl get svc -A
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get svc -A
+NAMESPACE     NAME                                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE
+default       kubernetes                            ClusterIP   10.96.0.1       <none>        443/TCP                  7h19m
+kube-system   kube-dns                              ClusterIP   10.96.0.10      <none>        53/UDP,53/TCP,9153/TCP   7h19m
+monitoring    grafana                               ClusterIP   10.96.141.153   <none>        80/TCP                   4h47m
+monitoring    prometheus-alertmanager               ClusterIP   10.99.76.139    <none>        9093/TCP                 4h52m
+monitoring    prometheus-alertmanager-headless      ClusterIP   None            <none>        9093/TCP                 4h52m
+monitoring    prometheus-kube-state-metrics         ClusterIP   10.97.78.169    <none>        8080/TCP                 4h52m
+monitoring    prometheus-prometheus-node-exporter   ClusterIP   10.99.32.144    <none>        9100/TCP                 4h52m
+monitoring    prometheus-prometheus-pushgateway     ClusterIP   10.110.42.17    <none>        9091/TCP                 4h52m
+monitoring    prometheus-server                     ClusterIP   10.108.170.27   <none>        80/TCP                   4h52m
