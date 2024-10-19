@@ -5,6 +5,6 @@
       datasources:
         prometheus:
           type: prometheus
-          url: https://studious-trout-j97xvpwj66c5w7x-9090.app.github.dev/
+          url: http://10.107.155.133:9090
           access: proxy
           isDefault: true
