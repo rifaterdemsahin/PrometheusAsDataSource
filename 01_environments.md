@@ -7,4 +7,7 @@
 ### Development Environments
 - 🖥️ **CodeSpaces**
 - ☸️ **Openshift**
-- Local 
+- Local Mac
+- VM
+- Rancher
+- Local desktop Windows
