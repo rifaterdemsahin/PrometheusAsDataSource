@@ -34,7 +34,8 @@ Create a Java Hello World app
     - Deploy your applications, Loki, Prometheus, and Grafana in Minikube.
     - Verify the deployment and functionality.
 
-6. **Also deploy in Rancher environment**
+Optional
+**Also deploy in Rancher environment**
     - Set up a Rancher-managed Kubernetes cluster.
     - Deploy your applications, Loki, Prometheus, and Grafana in the Rancher environment.
     - Verify the deployment and functionality.
