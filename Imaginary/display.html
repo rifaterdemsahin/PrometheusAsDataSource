@@ -142,13 +142,13 @@
             imageFiles.forEach((file, index) => {
                   const img = document.createElement('img');
                   img.src = file;
-                  img.alt = `Image ${index + 1}`;
+                  img.alt = file;
                   if (index === 0) img.classList.add('active');
                   carouselImages.appendChild(img);
                   images.push(img);
 
                   const nameSpan = document.createElement('span');
-                  nameSpan.textContent = `Image ${index + 1}`;
+                  nameSpan.textContent = file;
                   nameSpan.onclick = () => goToImage(index);
                   imageNames.appendChild(nameSpan);
             });
