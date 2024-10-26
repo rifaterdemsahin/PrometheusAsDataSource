@@ -22,3 +22,5 @@ Documentation for the Promethues as DataSource Project
 ### Key References:
 - `/workspaces/PrometheusAsDataSource/Journey/02_journeycodespaces.md`
 - `/workspaces/PrometheusAsDataSource/FormulaMarkdown/10_practicalgitcommits.md`
+
+git pull; git add . && git commit -m "Refine task priorities in kanban board" && git push;clear.exe 
