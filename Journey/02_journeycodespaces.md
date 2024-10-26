@@ -47,7 +47,10 @@ helm install prometheus prometheus-community/prometheus -n monitoring
 ```bash
 helm install grafana grafana/grafana -n monitoring
 ```
+Check Pods for running state
 
+### Output
+```bash
 @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get pods -A
 NAMESPACE     NAME                                                 READY   STATUS    RESTARTS      AGE
 kube-system   coredns-6f6b679f8f-v8rmh                             1/1     Running   2 (28m ago)   147m
@@ -63,6 +66,7 @@ monitoring    prometheus-kube-state-metrics-75b5bb4bf8-6h9js       1/1     Runni
 monitoring    prometheus-prometheus-node-exporter-ftbv5            1/1     Running   0             22s
 monitoring    prometheus-prometheus-pushgateway-84557d6c79-4fcc2   1/1     Running   0             22s
 monitoring    prometheus-server-644d686bc6-qbfrk                   1/2     Running   0             22s
+```
 
 # Port forward Grafana
 
