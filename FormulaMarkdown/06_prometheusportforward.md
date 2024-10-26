@@ -51,3 +51,5 @@ Error from server (NotFound): services "prometheus-server" not found
 @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl port-forward svc/prometheus-server 9090:80
 Error from server (NotFound): services "prometheus-server" not found
 @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
+
+git pull; git add . && git commit -m "Refine task priorities in kanban board" && git push;clear.exe 
