@@ -41,9 +41,11 @@ kube-system   kube-scheduler-minikube                              1/1     Runni
 kube-system   storage-provisioner                                  1/1     Running   3 (2m42s ago)   11h
 ```
 
+do not place the pods in a default namespace !!!
+
 Look for any `CrashLoopBackOff`, `Error`, or `Pending` statuses. If there are issues with the pods themselves, you should check the logs for more details:
 
-```bash
+>>> WRONG CNI ADDRESS NO CLUE IN LOGS
 ```bash
 kubectl logs grafana-5cf7db946f-cjc5c -n default
 kubectl logs prometheus-alertmanager-0 -n default
@@ -54,7 +56,7 @@ kubectl logs prometheus-server-644d686bc6-q8rjv -n default
 kubectl logs thanos-query-7cd5586db6-6nrqm -n default
 kubectl logs thanos-query-frontend-7d77d5979c-7qk6m -n default
 ```
-```
+
 
 ### **📄 Collecting Logs**
 
