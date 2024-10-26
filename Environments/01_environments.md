@@ -1,5 +1,5 @@
 
-## Prometheus Environments
+## UI Environments
 
 ### Prometheus
 > 🌐 [http://localhost:9090](http://localhost:9090)
