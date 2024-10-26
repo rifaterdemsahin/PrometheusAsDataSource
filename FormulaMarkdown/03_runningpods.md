@@ -20,6 +20,7 @@ prometheus-server-644d686bc6-p8jwk                   2/2     Running   0        
 ```
 
 Check the pods in the `monitoring` namespace:
+DO NOT INSTALL TO DEFAULT!!!!
 
 ```shell
 kubectl get pods -n monitoring
