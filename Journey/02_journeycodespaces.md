@@ -37,7 +37,11 @@ helm repo update
 echo "Helm repositories added successfully!"
 ```
 Important always use a namespace never use default
+### Important: Create Namespace
+Before proceeding with the installation, ensure you create a dedicated namespace for monitoring:
+```bash
 kubectl create namespace monitoring
+```
 
 ### 4. 📈 Install Prometheus
 ```bash
