@@ -27,6 +27,7 @@ version.BuildInfo{Version:"v3.16.1", GitCommit:"5a5449dc42be07001fd5771d56429132
 @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ helm list
 ```
 
+>>> CANSU >>>> COME BACK TO THE MAP!
 
 ### 3. ➕ Add Helm Repositories
 ```bash
