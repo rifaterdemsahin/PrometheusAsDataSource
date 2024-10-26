@@ -1,6 +1,7 @@
 I have a minikube in openshift cluster anmd i have prometheus and graphana and i am getting 404 error. They are running on minikube and have different loadbalanced urls and there are running on different ports. I get a 404 error. I added the prometheus yalm file that show shows the prometheses to be url and port. What should i try ?
+## 🚀 Troubleshooting 404 Error in Minikube OpenShift Cluster with Prometheus and Grafana
 
-🚀 It sounds like you have Minikube running an OpenShift cluster with Prometheus and Grafana, and you're encountering a 404 error when accessing these services via their load-balanced URLs. Here are some steps and things you can try to troubleshoot and resolve the issue:
+It sounds like you have Minikube running an OpenShift cluster with Prometheus and Grafana, and you're encountering a 404 error when accessing these services via their load-balanced URLs. Here are some steps and things you can try to troubleshoot and resolve the issue:
 
 ### 1. **🔍 Check Prometheus and Grafana Pod Status**
 First, ensure that both Prometheus and Grafana pods are running correctly.
