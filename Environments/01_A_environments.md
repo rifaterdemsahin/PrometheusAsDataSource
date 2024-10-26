@@ -27,3 +27,7 @@
 - 🖥️ **Local PowerShell**
 - 🖥️ **Browser**
 - 🖥️ **Codespaces**
+
+
+### Alterntives
+- 🖥️ **WSL**
