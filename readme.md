@@ -1,14 +1,13 @@
 Documentation for the Promethues as DataSource Project
-
-| Section         | Description                                                                                                               |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------|
-| **🚀 Journey**  | *Visual Story Explained with Steps* - A self-learning guide from beginner to skilled in visual storytelling.              |
-| **🌍 Real**     | *The Job That Starts with Objective and Key Results* - Sets goals and objectives, aligning tasks with measurable results. |
-| **🌳 Environments** | *The Roadmap and Use Cases* - A roadmap with learning modules and real-world use cases to apply new skills.            |
-| **🌌 Imaginary**    | *What You Learn on the Road* - Tracks concepts, theories, and skills acquired, promoting continuous growth.            |
-| **📐 Formulas**     | *The Guides That Are Mentioned* - Essential guides and formulas for understanding and solving project challenges.     |
-| **🔣 Symbols**      | *Code That Is Implemented* - Includes code snippets and examples to demonstrate each concept practically.              |
-| **🌀 Semblance**    | *Errors Found in the Process* - Documents mistakes and solutions, making errors valuable learning opportunities.       |
+| Section             | Description                                                                                                               | Stakeholders                        |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------------|
+| **🚀 Journey**      | *Visual Story Explained with Steps* - A self-learning guide from beginner to skilled in visual storytelling.              | Visual Designers, Educators         |
+| **🌍 Real**         | *The Job That Starts with Objective and Key Results* - Sets goals and objectives, aligning tasks with measurable results. | Project Managers, Team Leads        |
+| **🌳 Environments** | *The Roadmap and Use Cases* - A roadmap with learning modules and real-world use cases to apply new skills.            | Developers, Product Managers        |
+| **🌌 Imaginary**    | *What You Learn on the Road* - Tracks concepts, theories, and skills acquired, promoting continuous growth.            | Learners, Mentors                   |
+| **📐 Formulas**     | *The Guides That Are Mentioned* - Essential guides and formulas for understanding and solving project challenges.     | Analysts, Engineers                 |
+| **🔣 Symbols**      | *Code That Is Implemented* - Includes code snippets and examples to demonstrate each concept practically.              | Software Developers, QA Testers     |
+| **🌀 Semblance**    | *Errors Found in the Process* - Documents mistakes and solutions, making errors valuable learning opportunities.       | All Team Members, Quality Assurance |
 
 # 📚 Documentation Guide
 
