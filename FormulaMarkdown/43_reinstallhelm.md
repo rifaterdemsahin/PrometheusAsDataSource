@@ -4,6 +4,7 @@ kubectl delete namespace monitoring
 
 ```bash
 helm uninstall prometheus -n monitoring
+helm uninstall prometheus -n monitoring-24-october-test
 
 
 helm uninstall grafana -n monitoring
