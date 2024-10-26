@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Begüm Çetin",
+        "roles": "Developer"
+    },
+    {
+        "name": "buğra şentürk",
+        "roles": "System Administrator"
+    },
+    {
+        "name": "Büşra Selin Pekiççi",
+        "roles": "Project Manager"
+    },
+    {
+        "name": "Cankat Girgince",
+        "roles": "DevOps Engineer"
+    },
+    {
+        "name": "Cansu Yılmaz",
+        "roles": "QA Engineer"
+    },
+    {
+        "name": "emre okul",
+        "roles": "Database Administrator"
+    },
+    {
+        "name": "Gökhan Ulutaş",
+        "roles": "Network Engineer"
+    },
+    {
+        "name": "Nihat Ezer",
+        "roles": "Security Analyst"
+    },
+    {
+        "name": "Nihat Ezer2",
+        "roles": "IT Support Specialist"
+    }
+]
