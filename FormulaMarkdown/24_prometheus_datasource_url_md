@@ -4,6 +4,9 @@ You can get the Prometheus server's URL (usually the internal cluster IP and por
 
 To find the Prometheus service URL, use:
 
+MAIN SERVER!!!! 
+prometheus-server                     ClusterIP   10.107.155.133   <none>        80/TCP      11h
+
 ```bash
 kubectl get svc -l app=prometheus
 

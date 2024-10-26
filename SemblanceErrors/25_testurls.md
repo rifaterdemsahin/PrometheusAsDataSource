@@ -19,6 +19,10 @@ Post "http://localhost:9090/api/v1/query": dial tcp [::1]:9090: connect: connect
 >>> Firewall blocked the action
 
 http clusterip > http://10.107.155.133:9090 
+(CLUSTER CORRECT >>> PORT WRONG!)
+CORRECT : 80!!!!
+
+
 Error : Post "http://10.107.155.133:9090/api/v1/query": dial tcp 10.107.155.133:9090: i/o timeout - There was an error returned querying the Prometheus API.
 >>> There is no one to answer
 
