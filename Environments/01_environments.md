@@ -1,32 +1,31 @@
 
-## UI Environments
+## SDLC Environments
 
-### Prometheus
+### Monitoring Tools
+
+#### Prometheus
 > 🌐 [http://localhost:9090](http://localhost:9090)
 > Loadbalancer
-> Codespaces is getting used and Loadbalancer is used not the nodeport if we have an error we can pivot to nodepod
+> Codespaces is used, and Loadbalancer is preferred over nodeport. If errors occur, switch to nodeport.
 
-
-### Grafana
+#### Grafana
 > 🌐 [http://localhost:3000](http://localhost:3000)
 > Loadbalancer
-> Codespaces is getting used and Loadbalancer is used not the nodeport if we have an error we can pivot to nodepod
+> Codespaces is used, and Loadbalancer is preferred over nodeport. If errors occur, switch to nodeport.
 
-
-
-### Development K8s Environments
+### Development Environments
 - 🖥️ **CodeSpaces** (19 October)
 - 🚜 **Rancher**
-- ☸️ **Openshift** (If the current environment does not work)
+- ☸️ **Openshift** (Fallback option)
 - 🍏 **Local Mac**
 - 🖥️ **VM**
-- 🖥️ **Local desktop Windows**
+- 🖥️ **Local Windows Desktop**
 - 🖥️ **Docker Containers**
 - ☁️ **AWS Cloud9**
 - 🖥️ **Vagrant**
 - 🖥️ **VirtualBox**
 
-### Git 
-- 🖥️ **Local powershell** 
-- 🖥️ **Browser** 
-- 🖥️ **Codespaces** 
+### Version Control
+- 🖥️ **Local PowerShell**
+- 🖥️ **Browser**
+- 🖥️ **Codespaces**
