@@ -1,4 +1,10 @@
-@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ helm upgrade grafana grafana/grafana -f /workspaces/PrometheusAsDataSource/SymbolicCode/grafana.yaml
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
+
+helm upgrade grafana grafana/grafana -f /workspaces/PrometheusAsDataSource/SymbolicCode/grafana.yaml
+
+>>>> this did not help as it was a CNI issues!
+
+
 Release "grafana" has been upgraded. Happy Helming!
 NAME: grafana
 LAST DEPLOYED: Sat Oct 19 05:49:07 2024
