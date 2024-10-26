@@ -1,5 +1,7 @@
 ### Uninstalls
 
+kubectl delete namespace monitoring
+
 ```bash
 helm uninstall prometheus -n monitoring
 

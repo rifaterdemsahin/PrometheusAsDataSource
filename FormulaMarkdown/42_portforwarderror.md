@@ -1,4 +1,6 @@
 $ kubectl port-forward svc/prometheus-server 9090:9090
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>9090:80  ( this needs to be fixed)
+                                              source:destination
 
 ```markdown
 @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl port-forward svc/prometheus-server 9090:9090
@@ -47,9 +49,9 @@ spec:
   ipFamilyPolicy: SingleStack
   ports:
   - name: http
-    port: 80
+    port: 80>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> (this has to be desctionation)
     protocol: TCP
-    targetPort: 9090
+    targetPort: 9090 >>>>>>>>>>>>>>>>>>>>>>>>>>>>(this is the source)
   selector:
     app.kubernetes.io/component: server
     app.kubernetes.io/instance: prometheus
