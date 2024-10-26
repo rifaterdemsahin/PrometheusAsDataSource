@@ -50,6 +50,8 @@ helm install grafana grafana/grafana -n monitoring
 ```
 Check Pods for running state
 
+DO NOT DEFAULT NAMESPACE!!!!
+
 ### Output
 ```bash
 @rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ kubectl get pods -A
