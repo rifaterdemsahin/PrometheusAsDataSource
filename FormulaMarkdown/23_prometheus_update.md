@@ -1,4 +1,10 @@
-@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ helm upgrade prometheus prometheus-community/prometheus -f /workspaces/PrometheusAsDataSource/SymbolicCode/prometheus.yaml
+@rifaterdemsahin ➜ /workspaces/PrometheusAsDataSource (main) $ 
+
+helm upgrade prometheus prometheus-community/prometheus -f /workspaces/PrometheusAsDataSource/SymbolicCode/
+prometheus.yaml
+
+>> CNI needed this was required!!!
+
 Release "prometheus" has been upgraded. Happy Helming!
 NAME: prometheus
 LAST DEPLOYED: Sat Oct 19 05:51:32 2024
